@@ -6,9 +6,9 @@
 
 #### Paso 1 - Gramática de la tarea
 
-* Para este tutorial, vaya a la carpeta '..\htk\dictionary' que creó en su directorio de inicio. Crea un nuevo directorio llamado 'Tutorial'. 
+Para este tutorial, vaya a la carpeta '..\htk\dictionary' que creó en su directorio de inicio. Crea un nuevo directorio llamado 'Tutorial'. 
 
-* A continuación, cree un archivo llamado sample.grammar en su nueva carpeta '..\htk\dictionary\Tutorial' y agregue el siguiente texto:
+A continuación, cree un archivo llamado sample.grammar en su nueva carpeta '..\htk\dictionary\Tutorial' y agregue el siguiente texto:
 
 S : NS_B LOOKUP NS_E
 LOOKUP: WORD
@@ -17,10 +17,8 @@ Para este tutorial, cree un archivo llamado: sample.voca en su carpeta '..\htk\d
 
 % NS_B
 <s>        sil
-
 % NS_E
 </s>        sil
-
 % WORD
 achka a ch k a
 ahorrayqa a h o rr a y al
@@ -30,7 +28,7 @@ ahorrayqa a h o rr a y al
 Los archivos .grammar y .voca ahora deben compilarse en archivos " .dfa " y " .dict " para que Julius pueda usarlos. 
 Descargue el script del compilador de gramática mkdfa.jl de Julia a su carpeta '..\htk\scripts' usando el siguiente comando.
 
-julia D:\htk\scripts\mkdfa.jl D:\htk\dictionary\Tutorial\sample
+     *julia D:\htk\scripts\mkdfa.jl D:\htk\dictionary\Tutorial\sample*
 
 Los archivos sample.dfa y sample.term generados contienen información finita de autómatas , y el   archivo sample.dict contiene información del diccionario de palabras. Todos están en formato julius.
 
