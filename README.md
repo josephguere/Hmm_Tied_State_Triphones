@@ -88,7 +88,7 @@ Cree un nuevo directorio llamado 'mfcc' en su carpeta ***'..\htk\data\train'*** 
 ```
 HCopy -A -D -T 1 -C D:\htk\dictionary\Tutorial\wav_config -S D:\htk\data\train\codetrain.scp
 ```
-El resultado es la creación de una serie de archivos mfc correspondientes a los archivos enumerados en su script codetrain.scp en la carpeta ***'..\htk\data\train\mfcc'***.
+El resultado es la creación de una serie de archivos mfc correspondientes a los archivos enumerados en su script codetrain.scp en la carpeta ***'..\htk\data\train\mfcc'*** .
 
 #### Paso 6 - Creando monofones de inicio plano
 
