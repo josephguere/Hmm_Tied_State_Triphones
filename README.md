@@ -1,7 +1,7 @@
-# hmm_Tied_State_Triphones
+# Hmm_Tied_State_Triphones
 
 #### PRÓLOGO IMPORTANTE
-- Una vez adquiridos, los archivos wav deben copiarse en los directorios * data\train\wav *.
+- Una vez adquiridos, los archivos wav deben copiarse en los directorios * data\train\wav * , los pasos resumidos lo podrán encontrar en el archivo llamado Pasos_HMM.
 
 #### Paso 1 - Gramática de la tarea
 
