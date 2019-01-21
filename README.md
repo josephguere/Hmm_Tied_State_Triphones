@@ -2,7 +2,7 @@
 
 
 #### PRÓLOGO IMPORTANTE
-- Una vez adquiridos, los archivos wav deben copiarse en los directorios * data / {train, dev, test} / wav * siguiendo el protocolo / organización mencionado en * data / {train, dev, test}.
+- Una vez adquiridos, los archivos wav deben copiarse en los directorios * data\train\wav *.
 
 Paso 1 - Gramática de la tarea
 Para este tutorial, vaya a la carpeta '..\htk\dictionary' que creó en su directorio de inicio. Crea un nuevo directorio llamado 'Tutorial'. 
