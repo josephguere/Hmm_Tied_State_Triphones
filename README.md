@@ -198,6 +198,7 @@ HERest  -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\win
 HERest  -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\wintri.mlf -t 250.0 150.0 3000.0 -s D:\htk\models\hmm12\stats -S D:\htk\data\train\train.scp -H D:\htk\models\hmm11\macros -H D:\htk\models\hmm11\hmmdefs -M D:\htk\models\hmm12 D:\htk\dictionary\bin\triphones1
 Paso 10 - Haciendo Triphones de Estado Atado
 ```
+#### Paso 10 - Haciendo Triphones de Estado Atado
 El agrupamiento de árboles de decisión utilizado aquí permite sintetizar triphones nunca vistos. ¿Cómo? mediante el uso de un árbol de decisión fonética donde los modelos se organizan en un árbol y los parámetros que usted pasa se llaman preguntas. El decodificador hace una pregunta sobre el contexto del teléfono y decide qué modelo usar.
 
 Cree un nuevo archivo de script HTK llamado maketriphones.ded que contenga lo siguiente:
