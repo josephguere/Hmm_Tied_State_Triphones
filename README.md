@@ -6,9 +6,9 @@
 
 #### Paso 1 - Gramática de la tarea
 
-*Para este tutorial, vaya a la carpeta '..\htk\dictionary' que creó en su directorio de inicio. Crea un nuevo directorio llamado 'Tutorial'. 
+* Para este tutorial, vaya a la carpeta '..\htk\dictionary' que creó en su directorio de inicio. Crea un nuevo directorio llamado 'Tutorial'. 
 
-*A continuación, cree un archivo llamado sample.grammar en su nueva carpeta '..\htk\dictionary\Tutorial' y agregue el siguiente texto:
+* A continuación, cree un archivo llamado sample.grammar en su nueva carpeta '..\htk\dictionary\Tutorial' y agregue el siguiente texto:
 
 S : NS_B LOOKUP NS_E
 LOOKUP: WORD
