@@ -1,0 +1,120 @@
+#Crear la arquitectura del proyecto con ayuda del script "CrearCarpetas" ubicado en 
+'htk\scripts'.
+
+=====================================================================================================================================================================
+Paso 1 - Gramática de la tarea
+=====================================================================================================================================================================
+
+julia D:\htk\scripts\mkdfa.jl D:\htk\dictionary\sample
+
+NOTA:
+	--Colocar laS siguiente lineas en el archivo wlist :
+		SENT-END	[]	sil
+		SENT-START	[]	sil
+
+=====================================================================================================================================================================
+Paso 2 – Diccionario de Pronunciación 
+=====================================================================================================================================================================
+
+HDMan -A -D -T 1 -m -w D:\htk\dictionary\lexicon\wlist.txt -n D:\htk\dictionary\bin\monophones1 -i -l dlog D:\htk\dictionary\bin\dict D:\htk\dictionary\lexicon\quechua_lexicon.txt
+
+=====================================================================================================================================================================
+Paso 4 - Creando los archivos de transcripción
+=====================================================================================================================================================================
+
+julia D:\htk\scripts\prompts2mlf.jl D:\htk\dictionary\Tutorial\prompts.txt D:\htk\data\train\words.mlf
+
+HLEd -A -D -T 1 -l * -d D:\htk\dictionary\bin\dict -i D:\htk\data\train\phones0.mlf D:\htk\dictionary\Tutorial\mkphones0.led D:\htk\data\train\words.mlf
+
+HLEd -A -D -T 1 -l * -d D:\htk\dictionary\bin\dict -i D:\htk\data\train\phones1.mlf D:\htk\dictionary\tutorial\mkphones1.led D:\htk\data\train\words.mlf 
+
+=====================================================================================================================================================================
+Paso 5 - Codificación de los datos (audio)
+=====================================================================================================================================================================
+
+HCopy -A -D -T 1 -C D:\htk\dictionary\Tutorial\wav_config -S D:\htk\data\train\codetrain.scp
+
+=====================================================================================================================================================================
+Paso 6 - Creando monofones de inicio plano
+=====================================================================================================================================================================
+
+HCompV -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -f 0.01 -m -S D:\htk\data\train\train.scp -M D:\htk\models\hmm0 D:\htk\models\proto
+
+HERest -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\phones0.mlf -t 250.0 150.0 1000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm0\macros -H D:\htk\models\hmm0\hmmdefs -M D:\htk\models\hmm1 D:\htk\dictionary\bin\monophones0
+
+HERest -A -D -T 1 -C D:\htk\dictionary\tutorial\config -I D:\htk\data\train\phones0.mlf -t 250.0 150.0 1000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm1\macros -H D:\htk\models\hmm1\hmmdefs -M D:\htk\models\hmm2 D:\htk\dictionary\bin\monophones0
+
+HERest -A -D -T 1 -C D:\htk\dictionary\tutorial\config -I D:\htk\data\train\phones0.mlf -t 250.0 150.0 1000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm2\macros -H D:\htk\models\hmm2\hmmdefs -M D:\htk\models\hmm3 D:\htk\dictionary\bin\monophones0
+
+=====================================================================================================================================================================
+Paso 7 - Arreglando los Modelos de Silencio
+=====================================================================================================================================================================
+
+HHEd -A -D -T 1 -H D:\htk\models\hmm4\macros -H D:\htk\models\hmm4\hmmdefs -M D:\htk\models\hmm5 D:\htk\dictionary\Tutorial\sil.hed D:\htk\dictionary\bin\monophones1
+
+HERest -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\phones1.mlf -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm5\macros -H D:\htk\models\hmm5\hmmdefs -M D:\htk\models\hmm6 D:\htk\dictionary\bin\monophones1
+
+HERest -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\phones1.mlf -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm6\macros -H D:\htk\models\hmm6\hmmdefs -M D:\htk\models\hmm7 D:\htk\dictionary\bin\monophones1
+
+=====================================================================================================================================================================
+Paso 8 - Realinear los datos de entrenamiento
+=====================================================================================================================================================================
+
+HVite -A -D -T 1 -l * -o SWT -b SENT-END -C D:\htk\dictionary\Tutorial\config -H D:\htk\models\hmm7\macros -H D:\htk\models\hmm7\hmmdefs -i D:\htk\data\train\aligned.mlf -m -t 250.0 150.0 1000.0 -y lab -a -I D:\htk\data\train\words.mlf -S D:\htk\data\train\train.scp D:\htk\dictionary\bin\dict D:\htk\dictionary\bin\monophones1> HVite_log
+
+HERest -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\aligned.mlf -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm7\macros -H D:\htk\models\hmm7\hmmdefs -M D:\htk\models\hmm8 D:\htk\dictionary\bin\monophones1
+
+HERest -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\aligned.mlf -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm8\macros -H D:\htk\models\hmm8\hmmdefs -M D:\htk\models\hmm9 D:\htk\dictionary\bin\monophones1
+
+=====================================================================================================================================================================
+Paso 9 - Haciendo Triphones de Monophones
+=====================================================================================================================================================================
+
+HLEd -A -D -T 1 -n D:\htk\dictionary\bin\triphones1 -l * -i D:\htk\data\train\wintri.mlf D:\htk\dictionary\Tutorial\mktri.led D:\htk\data\train\aligned.mlf
+
+#Ubicarse en el directorio D:\htk\dictionary\bin y ejecutar lo siguiente:
+
+julia D:\htk\scripts\mktrihed.jl monophones1 triphones1 D:\htk\dictionary\Tutorial\mktri.hed
+
+HHEd -A -D -T 1 -H D:\htk\models\hmm9\macros -H D:\htk\models\hmm9\hmmdefs -M D:\htk\models\hmm10 D:\htk\dictionary\Tutorial\mktri.hed D:\htk\dictionary\bin\monophones1
+
+HERest  -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\wintri.mlf -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm10\macros -H D:\htk\models\hmm10\hmmdefs -M D:\htk\models\hmm11 D:\htk\dictionary\bin\triphones1
+
+HERest  -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\wintri.mlf -t 250.0 150.0 3000.0 -s D:\htk\models\hmm12\stats -S D:\htk\data\train\train.scp -H D:\htk\models\hmm11\macros -H D:\htk\models\hmm11\hmmdefs -M D:\htk\models\hmm12 D:\htk\dictionary\bin\triphones1
+
+=====================================================================================================================================================================
+Paso 10 - Haciendo Triphones de Estado Atado
+=====================================================================================================================================================================
+
+HDMan -A -D -T 1 -b sp -n D:\htk\dictionary\bin\fulllist0 -g D:\htk\dictionary\Tutorial\maketriphones.ded -l flog D:\htk\dict-tri D:\htk\dictionary\lexicon\quechua_lexicon.txt
+
+julia D:\htk\scripts\fixfulllist.jl D:\htk\dictionary\bin\fulllist0 D:\htk\dictionary\bin\monophones0 D:\htk\dictionary\bin\fulllist
+
+julia D:\htk\scripts\mkclscript.jl D:\htk\dictionary\bin\monophones0 D:\htk\dictionary\Tutorial\tree.hed
+
+HHEd -A -D -T 1 -H D:\htk\models\hmm12\macros -H D:\htk\models\hmm12\hmmdefs -M D:\htk\models\hmm13 D:\htk\dictionary\Tutorial\tree.hed D:\htk\dictionary\bin\triphones1
+
+HERest -A -D -T 1 -T 1 -C D:\htk\dictionary\tutorial\config -I D:\htk\data\train\wintri.mlf  -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm13\macros -H D:\htk\models\hmm13\hmmdefs -M D:\htk\models\hmm14 D:\htk\tiedlist
+
+HERest -A -D -T 1 -T 1 -C D:\htk\dictionary\tutorial\config -I D:\htk\data\train\wintri.mlf  -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm14\macros -H D:\htk\models\hmm14\hmmdefs -M D:\htk\models\hmm15 D:\htk\tiedlist
+
+=====================================================================================================================================================================
+Corriendo julius en vivo
+=====================================================================================================================================================================
+
+D:> julius-4.3.1 -input mic -C Sample.jconf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
