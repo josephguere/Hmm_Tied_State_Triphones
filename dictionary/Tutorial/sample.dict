@@ -1,0 +1,432 @@
+0	[<s>]	sil
+1	[</s>]	sil
+2	[achka]	a ch k a
+2	[ahorrayqa]	a h o rr a y al
+2	[allin]	a ll i n
+2	[allinchiki]	a ll i n ch i k i
+2	[allinchu]	a ll i n ch u
+2	[allinllachu]	a ll i n ll a ch u
+2	[allinmi]	a ll i n m i
+2	[allinta]	a ll i n t a
+2	[allintam]	a ll i n t a m
+2	[allpata]	a ll p a t a
+2	[ama]	a m a
+2	[aman]	a m a n
+2	[ancha]	a n ch a
+2	[apu]	a p u
+2	[apullikuna]	a p u ll i k u n a
+2	[apullikunaq]	a p u ll i k u n a q
+2	[apusimi]	a p u s i m i
+2	[aqllayman]	a q ll a y m a n
+2	[aqllayta]	a q ll a y t a
+2	[ari]	a r i
+2	[ariya]	a r i y a
+2	[as]	a s
+2	[asllamanta]	a s ll a m a n t a
+2	[asnuqa]	a s n ul a
+2	[aswan]	a s w a n
+2	[aswanqa]	a s w a n al
+2	[aswantaqa]	a s w a n t a al
+2	[atinallam]	a t i n a ll a m
+2	[atinchu]	a t i n ch u
+2	[atiwaqmi]	a t i w a q m i
+2	[atuqpa]	a t ul p a
+2	[aw]	a w
+2	[ay]	a y
+2	[ayllupi]	a y ll u p i
+2	[bancomanta]	b a n c o m a n t a
+2	[bancopi]	b a n c o p i
+2	[cajeromanta]	c a j e r o m a n t a
+2	[chanin]	ch a n i n
+2	[chaninta]	ch a n i n t a
+2	[chaski]	ch a s k i
+2	[chawpi]	ch a w p i
+2	[chay]	ch a y
+2	[chayman]	ch a y m a n
+2	[chaymanta]	ch a y m a n t a
+2	[chaymantaqa]	ch a y m a n t a al
+2	[chaymi]	ch a y m i
+2	[chayna]	ch a y n a
+2	[chaynalla]	ch a y n a ll a
+2	[chaynallataq]	ch a y n a ll a t a q
+2	[chaynallataqmi]	ch a y n a ll a t a q m i
+2	[chaynam]	ch a y n a m
+2	[chaynaqa]	ch a y n a al
+2	[chaynata]	ch a y n a t a
+2	[chaynatam]	ch a y n a t a m
+2	[chaypaq]	ch a y p a q
+2	[chaypi]	ch a y p i
+2	[chaypim]	ch a y p i m
+2	[chayqa]	ch a y al
+2	[chayraykum]	ch a y r a y k u m
+2	[chaysi]	ch a y s i
+2	[chayta]	ch a y t a
+2	[chaytam]	ch a y t a m
+2	[chaytaqa]	ch a y t a al
+2	[chaywan]	ch a y w a n
+2	[chiqapmi]	ch i al p m i
+2	[chiyqa]	ch i y al
+2	[chunka]	ch u n k a
+2	[chupan]	ch u p a n
+2	[churaniku]	ch u r a n i k u
+2	[churanku]	ch u r a n k u
+2	[churay]	ch u r a y
+2	[churayta]	ch u r a y t a
+2	[hachawanqu]	h a ch a w a n q u
+2	[hachawanqukunan]	h a ch a w a n q u k u n a n
+2	[hachawanquq]	h a ch a w a n q ul
+2	[hampikunata]	h a m p i k u n a t a
+2	[hatun]	h a t u n
+2	[hawa]	h a w a
+2	[hawan]	h a w a n
+2	[hawka]	h a w k a
+2	[hayka]	h a y k a
+2	[hina]	h i n a
+2	[hinallataq]	h i n a ll a t a q
+2	[hinallataqmi]	h i n a ll a t a q m i
+2	[hinaptinmi]	h i n a p t i n m i
+2	[hinaspa]	h i n a s p a
+2	[hinaspam]	h i n a s p a m
+2	[hinaspapas]	h i n a s p a p a s
+2	[hucha]	h u ch a
+2	[huchallisqa]	h u ch a ll i s al
+2	[huchamanta]	h u ch a m a n t a
+2	[huchanmanta]	h u ch a n m a n t a
+2	[huchayuq]	h u ch a y ul
+2	[huchuy]	h u ch u y
+2	[huk]	h u k
+2	[hukaq]	h u k a q
+2	[hukniyuq]	h u k n i y ul
+2	[huntasqa]	h u n t a s al
+2	[huntay]	h u n t a y
+2	[hurquy]	h u r q u y
+2	[hurquyta]	h u r q u y t a
+2	[icha]	i ch a
+2	[ichaqa]	i ch a al
+2	[ima]	i m a
+2	[imanasqa]	i m a n a s al
+2	[imanasqataq]	i m a n a s al t a q
+2	[imapaqpas]	i m a p a q p a s
+2	[imapas]	i m a p a s
+2	[imataq]	i m a t a q
+2	[imatataq]	i m a t a t a q
+2	[imaymana]	i m a y m a n a
+2	[imayna]	i m a y n a
+2	[imaynallam]	i m a y n a ll a m
+2	[imaynallataq]	i m a y n a ll a t a q
+2	[imaynam]	i m a y n a m
+2	[imaynataq]	i m a y n a t a q
+2	[imaynatataq]	i m a y n a t a t a q
+2	[iskay]	i s k a y
+2	[iskayniyuq]	i s k a y n i y ul
+2	[isqun]	i s q u n
+2	[isqunniyuq]	i s q u n n i y ul
+2	[juntos]	j u n t o s
+2	[juntosmanta]	j u n t o s m a n t a
+2	[juntospa]	j u n t o s p a
+2	[kachkan]	k a ch k a n
+2	[kachkanki]	k a ch k a n k i
+2	[kachun]	k a ch u n
+2	[kallpawan]	k a ll p a w a n
+2	[kamachi]	k a m a ch i
+2	[kamachikuna]	k a m a ch i k u n a
+2	[kamachiq]	k a m a ch i q
+2	[kamachiqmi]	k a m a ch i q m i
+2	[kamachiqpa]	k a m a ch i q p a
+2	[kamachiqqa]	k a m a ch i q al
+2	[kamachisqa]	k a m a ch i s al
+2	[kamachisqan]	k a m a ch i s al n
+2	[kamachisqanman]	k a m a ch i s al n m a n
+2	[kamachiy]	k a m a ch i y
+2	[kamay]	k a m a y
+2	[kamayuq]	k a m a y ul
+2	[kamayuqkuna]	k a m a y ul k u n a
+2	[kan]	k a n
+2	[kanan]	k a n a n
+2	[kananpaq]	k a n a n p a q
+2	[kani]	k a n i
+2	[kanki]	k a n k i
+2	[kanku]	k a n k u
+2	[kanman]	k a n m a n
+2	[kanqa]	k a n al
+2	[kantaqmi]	k a n t a q m i
+2	[kanxachu]	k a n x a ch u
+2	[kaptin]	k a p t i n
+2	[kaptinqa]	k a p t i n al
+2	[kaq]	k a q
+2	[kaqllataq]	k a q ll a t a q
+2	[kaqtin]	k a q t i n
+2	[kaqtinqa]	k a q t i n al
+2	[karqa]	k a r al
+2	[kasan]	k a s a n
+2	[kaspapas]	k a s p a p a s
+2	[kasqa]	k a s al
+2	[kasqan]	k a s al n
+2	[kasqanta]	k a s al n t a
+2	[kasqantapas]	k a s al n t a p a s
+2	[kawsay]	k a w s a y
+2	[kawsaykuna]	k a w s a y k u n a
+2	[kawsayninta]	k a w s a y n i n t a
+2	[kawsayniyuq]	k a w s a y n i y ul
+2	[kay]	k a y
+2	[kayhinata]	k a y h i n a t a
+2	[kaykunata]	k a y k u n a t a
+2	[kaynata]	k a y n a t a
+2	[kayqa]	k a y al
+2	[kayta]	k a y t a
+2	[kikin]	k i k i n
+2	[killa]	k i ll a
+2	[killapi]	k i ll a p i
+2	[kimsa]	k i m s a
+2	[kimsayuq]	k i m s a y ul
+2	[kirisqa]	k i r i s al
+2	[kunan]	k u n a n
+2	[kunanqa]	k u n a n al
+2	[kunanri]	k u n a n r i
+2	[kuska]	k u s k a
+2	[kuti]	k u t i
+2	[kutichinqa]	k u t i ch i n al
+2	[llamkaniku]	ll a m k a n i k u
+2	[llamkay]	ll a m k a y
+2	[llamkayta]	ll a m k a y t a
+2	[llapa]	ll a p a
+2	[llapallan]	ll a p a ll a n
+2	[llapan]	ll a p a n
+2	[llaqta]	ll a q t a
+2	[llaqtakunapa]	ll a q t a k u n a p a
+2	[llaqtakunapi]	ll a q t a k u n a p i
+2	[lliw]	ll i w
+2	[llulla]	ll u ll a
+2	[llullakuspa]	ll u ll a k u s p a
+2	[llumpay]	ll u m p a y
+2	[machu]	m a ch u
+2	[mama]	m a m a
+2	[mamay]	m a m a y
+2	[mana]	m a n a
+2	[manachu]	m a n a ch u
+2	[manam]	m a n a m
+2	[manan]	m a n a n
+2	[manaraq]	m a n a r a q
+2	[manataq]	m a n a t a q
+2	[manaxa]	m a n a x a
+2	[manaxam]	m a n a x a m
+2	[manaya]	m a n a y a
+2	[mariaqa]	m a r i a al
+2	[masata]	m a s a t a
+2	[maypim]	m a y p i m
+2	[maypiraq]	m a y p i r a q
+2	[maypiraqmi]	m a y p i r a q m i
+2	[mayqin]	m a y q i n
+2	[meike]	m e i k e
+2	[miski]	m i s k i
+2	[muchuchisqa]	m u ch u ch i s al
+2	[muchuchiy]	m u ch u ch i y
+2	[muhuta]	m u h u t a
+2	[munani]	m u n a n i
+2	[munanki]	m u n a n k i
+2	[munanku]	m u n a n k u
+2	[munaspaqa]	m u n a s p a al
+2	[munaspayqa]	m u n a s p a y al
+2	[munayninpi]	m u n a y n i n p i
+2	[nin]	n i n
+2	[niqta]	n i q t a
+2	[nispa]	n i s p a
+2	[nispan]	n i s p a n
+2	[nisqa]	n i s al
+2	[nitaq]	n i t a q
+2	[pacha]	p a ch a
+2	[pachak]	p a ch a k
+2	[pachamamapa]	p a ch a m a m a p a
+2	[pampapaq]	p a m p a p a q
+2	[papata]	p a p a t a
+2	[papay]	p a p a y
+2	[paqtay]	p a q t a y
+2	[pasaq]	p a s a q
+2	[pasmin]	p a s m i n
+2	[patachu]	p a t a ch u
+2	[patmi]	p a t m i
+2	[pay]	p a y
+2	[paykuna]	p a y k u n a
+2	[paykunaqa]	p a y k u n a al
+2	[paymi]	p a y m i
+2	[pichqa]	p i ch al
+2	[pichqayuq]	p i ch al y ul
+2	[pimanpas]	p i m a n p a s
+2	[pipas]	p i p a s
+2	[pirwa]	p i r w a
+2	[pisqayuq]	p i s al y ul
+2	[punchaw]	p u n ch a w
+2	[punchaypi]	p u n ch a y p i
+2	[pusaq]	p u s a q
+2	[pusaqniyuq]	p u s a q n i y ul
+2	[qali]	al l i
+2	[qallarin]	al ll a r i n
+2	[qampas]	al m p a s
+2	[qamqa]	al m al
+2	[qanchis]	al n ch i s
+2	[qanchisniyuq]	al n ch i s n i y ul
+2	[qanmi]	al n m i
+2	[qari]	al r i
+2	[qatuq]	al t ul
+2	[qaway]	al w a y
+2	[qayakuq]	al y a k ul
+2	[qayakuspa]	al y a k u s p a
+2	[qayakusqan]	al y a k u s al n
+2	[qayakuy]	al y a k u y
+2	[qichwa]	q i ch w a
+2	[qichwasimipi]	q i ch w a s i m i p i
+2	[qillqa]	q i ll al
+2	[qillqaman]	q i ll al m a n
+2	[qillqana]	q i ll al n a
+2	[qillqapi]	q i ll al p i
+2	[qillqaq]	q i ll al q
+2	[qillqaspa]	q i ll al s p a
+2	[qillqasqa]	q i ll al s al
+2	[qillqata]	q i ll al t a
+2	[qullqi]	q u ll q i
+2	[qullqichay]	q u ll q i ch a y
+2	[qullqichayqa]	q u ll q i ch a y al
+2	[qullqiki]	q u ll q i k i
+2	[qullqikita]	q u ll q i k i t a
+2	[qullqinpi]	q u ll q i n p i
+2	[qullqiqa]	q u ll q i al
+2	[qullqita]	q u ll q i t a
+2	[qullqitaqa]	q u ll q i t a al
+2	[qullqiykita]	q u ll q i y k i t a
+2	[qullqiykitaqa]	q u ll q i y k i t a al
+2	[qullqiyku]	q u ll q i y k u
+2	[qura]	q u r a
+2	[rayku]	r a y k u
+2	[rikchaq]	r i k ch a q
+2	[rimana]	r i m a n a
+2	[rimaspa]	r i m a s p a
+2	[rimaykuna]	r i m a y k u n a
+2	[rimaynin]	r i m a y n i n
+2	[rimayta]	r i m a y t a
+2	[rin]	r i n
+2	[riniku]	r i n i k u
+2	[riqsichimusqaykichik]	r i q s i ch i m u s al y k i ch i k
+2	[riyta]	r i y t a
+2	[runa]	r u n a
+2	[runakuna]	r u n a k u n a
+2	[runakunam]	r u n a k u n a m
+2	[runakunapa]	r u n a k u n a p a
+2	[runakunata]	r u n a k u n a t a
+2	[runan]	r u n a n
+2	[runapa]	r u n a p a
+2	[runata]	r u n a t a
+2	[rurani]	r u r a n i
+2	[ruranku]	r u r a n k u
+2	[rurasun]	r u r a s u n
+2	[rurayman]	r u r a y m a n
+2	[rurayta]	r u r a y t a
+2	[ruway]	r u w a y
+2	[ruwayninta]	r u w a y n i n t a
+2	[ruwayta]	r u w a y t a
+2	[sapa]	s a p a
+2	[sapanchasqa]	s a p a n ch a s al
+2	[saqikusaq]	s a q i k u s a q
+2	[sasachakuy]	s a s a ch a k u y
+2	[sasam]	s a s a m
+2	[secretaykita]	s e c r e t a y k i t a
+2	[sichu]	s i ch u
+2	[sichus]	s i ch u s
+2	[simi]	s i m i
+2	[simikunapa]	s i m i k u n a p a
+2	[simikunata]	s i m i k u n a t a
+2	[siwara]	s i w a r a
+2	[solesta]	s o l e s t a
+2	[solista]	s o l i s t a
+2	[sullpayki]	s u ll p a y k i
+2	[sumaq]	s u m a q
+2	[sunqu]	s u n q u
+2	[suqta]	s ul t a
+2	[suqtayuq]	s ul t a y ul
+2	[suyu]	s u y u
+2	[suyukunapi]	s u y u k u n a p i
+2	[suyupa]	s u y u p a
+2	[suyupi]	s u y u p i
+2	[suyupiqa]	s u y u p i al
+2	[takyasqa]	t a k y a s al
+2	[taqa]	t a al
+2	[taqikuy]	t a q i k u y
+2	[taqiyqa]	t a q i y al
+2	[tarpuy]	t a r p u y
+2	[tarpuyta]	t a r p u y t a
+2	[tawa]	t a w a
+2	[tawayuq]	t a w a y ul
+2	[tayta]	t a y t a
+2	[taytay]	t a y t a y
+2	[tukuy]	t u k u y
+2	[tuqriy]	t ul r i y
+2	[tuqyayninmanhina]	t ul y a y n i n m a n h i n a
+2	[turu]	t u r u
+2	[ukullapi]	u k u ll a p i
+2	[ukunpi]	u k u n p i
+2	[umalli]	u m a ll i
+2	[umalliq]	u m a ll i q
+2	[urqunapaq]	u r q u n a p a q
+2	[urqusqaykita]	u r q u s al y k i t a
+2	[urquyta]	u r q u y t a
+2	[usayta]	u s a y t a
+2	[usqay]	u s al y
+2	[usqayllaman]	u s al y ll a m a n
+2	[utaq]	u t a q
+2	[utqaylla]	u t al y ll a
+2	[uy]	u y
+2	[uywa]	u y w a
+2	[uywakunapas]	u y w a k u n a p a s
+2	[ventanillaman]	v e n t a n i ll a m a n
+2	[wakin]	w a k i n
+2	[wakinqa]	w a k i n al
+2	[waqaychakuyman]	w a al y ch a k u y m a n
+2	[waqaychakuyqa]	w a al y ch a k u y al
+2	[waqaychanayki]	w a al y ch a n a y k i
+2	[waqaychaspa]	w a al y ch a s p a
+2	[waqaychaspaqa]	w a al y ch a s p a al
+2	[waqaychasqa]	w a al y ch a s al
+2	[waqaychayqa]	w a al y ch a y al
+2	[waranqa]	w a r a n al
+2	[warma]	w a r m a
+2	[warmi]	w a r m i
+2	[wasi]	w a s i
+2	[wasillapi]	w a s i ll a p i
+2	[wasiman]	w a s i m a n
+2	[wasimanta]	w a s i m a n t a
+2	[wasipa]	w a s i p a
+2	[wasipi]	w a s i p i
+2	[wasiq]	w a s i q
+2	[wata]	w a t a
+2	[watiqmanta]	w a t i q m a n t a
+2	[wayta]	w a y t a
+2	[waytakuna]	w a y t a k u n a
+2	[willakuy]	w i ll a k u y
+2	[wixaymi]	w i x a y m i
+2	[wixaypaq]	w i x a y p a q
+2	[xa]	x a
+2	[xam]	x a m
+2	[xawpa]	x a w p a
+2	[xawpaq]	x a w p a q
+2	[xawray]	x a w r a y
+2	[xiqi]	x i q i
+2	[xupunayki]	x u p u n a y k i
+2	[xuqa]	x ul a
+2	[xuqapas]	x ul a p a s
+2	[xuqaqa]	x ul a al
+2	[xuqaykuqa]	x ul a y k ul a
+2	[ya]	y a
+2	[yachakunqa]	y a ch a k u n al
+2	[yachanichu]	y a ch a n i ch u
+2	[yachanki]	y a ch a n k i
+2	[yachasqa]	y a ch a s al
+2	[yachay]	y a ch a y
+2	[yaku]	y a k u
+2	[yanapay]	y a n a p a y
+2	[yanapayta]	y a n a p a y t a
+2	[yapamanta]	y a p a m a n t a
+2	[yapuyta]	y a p u y t a
+2	[yaqa]	y a al
+2	[yay]	y a y
+2	[yupa]	y u p a
+2	[yuyanki]	y u y a n k i
+2	[yuyariy]	y u y a r i y

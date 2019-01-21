@@ -1,0 +1,42 @@
+WARNING: no script file D:/htk/dictionary/lexicon/quechua_lexicon.txt.ded
+
+Dictionary Usage Statistics
+---------------------------
+  Dictionary    TotalWords WordsUsed  TotalProns PronsUsed
+quechua_lexi       430        430        430        430
+    dict-tri       430        430        430        430
+
+430 words required, 0 missing
+
+New Phone Usage Counts
+---------------------
+  1. a     :   674
+  2. ch    :   107
+  3. k     :   152
+  4. sp    :   430
+  5. h     :    33
+  6. o     :     9
+  7. rr    :     1
+  8. y     :   186
+  9. al    :    95
+ 10. ll    :    74
+ 11. i     :   248
+ 12. n     :   236
+ 13. u     :   192
+ 14. m     :   143
+ 15. t     :   126
+ 16. p     :   119
+ 17. q     :   105
+ 18. s     :   122
+ 19. r     :    67
+ 20. ul    :    28
+ 21. w     :    61
+ 22. b     :     2
+ 23. c     :     4
+ 24. j     :     4
+ 25. e     :     7
+ 26. x     :    16
+ 27. l     :     3
+ 28. v     :     1
+
+Dictionary D:/htk/dict-tri created
