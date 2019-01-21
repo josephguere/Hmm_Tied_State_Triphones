@@ -32,7 +32,7 @@ Descargue el script del compilador de gramática mkdfa.jl de Julia a su carpeta 
 ```
 Los archivos sample.dfa y sample.term generados contienen información finita de autómatas , y el   archivo sample.dict contiene información del diccionario de palabras. Todos están en formato julius.
 
-###Paso 2 – Diccionario de Pronunciación 
+#### Paso 2 – Diccionario de Pronunciación 
 
 Crear un archi prompts.txt en la ruta '..\htk\dictionary\Tutorial' , que es la lista de palabras que registraremos en el siguiente Paso.
 
@@ -52,13 +52,13 @@ HDMan -A -D -T 1 -m -w D:\htk\dictionary\lexicon\wlist.txt -n D:\htk\dictionary\
 ```
 Por último, cree otro archivo de monophones para un paso posterior. Simplemente copie el archivo "monophones1" a un nuevo archivo "monophones0" en su directorio '..\htk\dictionary\bin' y luego elimine la entrada de "sp" de pausa corta en monophones0 .
 
-###Paso 3 - Grabar los datos
+#### Paso 3 - Grabar los datos
 
 En este paso se deberá grabar el corpus para el entrenamiento del asr, podrán encontrar la lista de los audios entrando al siguiente enlace:  
 
 https://siminchikkunarayku.pe/
 
-###Paso 4 - Creando los archivos de transcripción
+#### Paso 4 - Creando los archivos de transcripción
 
 Descargue el script de Julia prompts2mlf.jl a su directorio '..\htk\scripts' para generar el archivo mlf desde su archivo prompts.txt. Ejecute el script prompts2mlf desde su carpeta '..\htk\dictionary\Tutorial' de la siguiente manera:
 ```
@@ -76,7 +76,7 @@ Luego ejecute el comando HLEd nuevamente desde su carpeta '..\htk\dictionary\Tut
 ```
 HLEd -A -D -T 1 -l * -d D:\htk\dictionary\bin\dict -i D:\htk\data\train\phones1.mlf D:\htk\dictionary\tutorial\mkphones1.led D:\htk\data\train\words.mlf
 ```
-###Paso 5 - Codificación de los datos (audio)
+#### Paso 5 - Codificación de los datos (audio)
 
 Utiliza la herramienta HCopy para convertir sus archivos wav al formato MFCC. Tienes 2 opciones. Puede ejecutar el comando HCopy a mano para cada archivo de audio que creó en el Paso 3, o puede crear un archivo que contenga una lista de cada archivo de audio de origen y el nombre del archivo MFCC al que se convertirá, y usar ese archivo como un parámetro para el comando HCopy. Usaremos el segundo enfoque en este ejemplo. 
 
@@ -90,7 +90,7 @@ HCopy -A -D -T 1 -C D:\htk\dictionary\Tutorial\wav_config -S D:\htk\data\train\c
 ```
 El resultado es la creación de una serie de archivos mfc correspondientes a los archivos enumerados en su script codetrain.scp en la carpeta '..\htk\data\train\mfcc'.
 
-Paso 6 - Creando monofones de inicio plano
+#### Paso 6 - Creando monofones de inicio plano
 
 El primer paso en el entrenamiento del Modelo Oculto de Markov ("HMM") es definir un modelo de prototipo llamado "proto". El enfoque aquí es crear una estructura modelo, los parámetros no son importantes. Cree un archivo llamado proto en su directorio '..\ htk\models'.
  
@@ -127,7 +127,7 @@ HERest -A -D -T 1 -C D:\htk\dictionary\tutorial\config -I D:\htk\data\train\phon
 
 HERest -A -D -T 1 -C D:\htk\dictionary\tutorial\config -I D:\htk\data\train\phones0.mlf -t 250.0 150.0 1000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm2\macros -H D:\htk\models\hmm2\hmmdefs -M D:\htk\models\hmm3 D:\htk\dictionary\bin\monophones0
 ```
-Paso 7 - Arreglando los Modelos de Silencio
+#### Paso 7 - Arreglando los Modelos de Silencio
 
 Primero copie el contenido de la carpeta hmm3 a hmm4. Luego, utilizando un editor, cree un nuevo modelo "sp" en '..\htk\models\hmm\hmmdefs ' de la siguiente manera:
 
@@ -138,111 +138,108 @@ Primero copie el contenido de la carpeta hmm3 a hmm4. Luego, utilizando un edito
 •	Cambia <TRANSP> a 3
 •	Cambiar matriz en <TRANSP> a 3 por 3 matriz
 •	Cambiar los números en la matriz de la siguiente manera:
-
+```
 0.0 1.0 0.0
 0.0 0.9 0.1
 0.0 0.0 0.0
-
+```
 A continuación, ejecute el editor de HMM llamado HHEd para "vincular" el estado sp al estado central central, ya que significa que uno o más HMM comparten el mismo conjunto de parámetros. Para hacer esto, necesita crear el siguiente script de comando HHEd, llamado sil.hed , en su carpeta '..\htk\dictionary\Tutorial ':
 
 La última línea es el comando "empate". A continuación, ejecute HHEd de la siguiente manera, pero utilizando el archivo monophones1 que contiene el modelo sp:
-
+```
 HHEd -A -D -T 1 -H D:\htk\models\hmm4\macros -H D:\htk\models\hmm4\hmmdefs -M D:\htk\models\hmm5 D:\htk\dictionary\Tutorial\sil.hed D:\htk\dictionary\bin\monophones1
-
+```
 A continuación, ejecute HERest 2 veces más, esta vez con el archivo monophones1: 
-
-
+```
 HERest -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\phones1.mlf -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm5\macros -H D:\htk\models\hmm5\hmmdefs -M D:\htk\models\hmm6 D:\htk\dictionary\bin\monophones1
 
 HERest -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\phones1.mlf -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm6\macros -H D:\htk\models\hmm6\hmmdefs -M D:\htk\models\hmm7 D:\htk\dictionary\bin\monophones1
-
-Paso 8 - Realinear los datos de entrenamiento
+```
+#### Paso 8 - Realinear los datos de entrenamiento
 
 Esta operación es similar a la operación de asignación de palabra a teléfono HLEd realizada en el Paso 4, sin embargo, en este caso, el comando HVite puede considerar todas las pronunciaciones de cada palabra, y luego mostrar la pronunciación que mejor coincida con los datos acústicos.
 
 Ejecute el comando HVite de la siguiente manera:
-
+```
 HVite -A -D -T 1 -l * -o SWT -b SENT-END -C D:\htk\dictionary\Tutorial\config -H D:\htk\models\hmm7\macros -H D:\htk\models\hmm7\hmmdefs -i D:\htk\data\train\aligned.mlf -m -t 250.0 150.0 1000.0 -y lab -a -I D:\htk\data\train\words.mlf -S D:\htk\data\train\train.scp D:\htk\dictionary\bin\dict D:\htk\dictionary\bin\monophones1> HVite_log
-
+```
 A continuación, ejecuta HEREST 2 veces más:
-
+```
 HERest -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\aligned.mlf -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm7\macros -H D:\htk\models\hmm7\hmmdefs -M D:\htk\models\hmm8 D:\htk\dictionary\bin\monophones1
 
 HERest -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\aligned.mlf -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm8\macros -H D:\htk\models\hmm8\hmmdefs -M D:\htk\models\hmm9 D:\htk\dictionary\bin\monophones1
+```
+*Nota: los modelos de monophone creados en hmm9 podrían usarse con Julius para el reconocimiento de voz, pero la precisión del reconocimiento puede mejorarse enormemente mediante el uso de triphones de estado atado. Consulte las siguientes secciones.
 
-Nota: los modelos de monophone creados en hmm9 podrían usarse con Julius para el reconocimiento de voz, pero la precisión del reconocimiento puede mejorarse enormemente mediante el uso de triphones de estado atado. Consulte las siguientes secciones.
-
-
-
-Paso 9 - Haciendo Triphones de Monophones
+#### Paso 9 - Haciendo Triphones de Monophones
 
 Para convertir las transcripciones de monophone en el archivo alineado.mlf que creó en el Paso 8 en un conjunto equivalente de transcripciones de triphone, debe ejecutar el comando HLEd. HLEd se puede usar para generar una lista de todos los tonos de llamada para los cuales hay al menos un ejemplo en los datos de entrenamiento.
 
 Primero necesitas crear el script de edición mktri.led. Luego ejecuta el comando HLEd de la siguiente manera:
-
+```
 HLEd -A -D -T 1 -n D:\htk\dictionary\bin\triphones1 -l * -i D:\htk\data\train\wintri.mlf D:\htk\dictionary\Tutorial\mktri.led D:\htk\data\train\aligned.mlf
-
+```
 A continuación, descargue el script Julia mktrihed.jl en su '..\htk\scripts', luego cree el archivo mktri.hed ejecutando el siguiente comando dentro de la carpeta 
 '..\ htk\dictionary\bin':
-
+```
 julia D:\htk\scripts\mktrihed.jl monophones1 triphones1 D:\htk\dictionary\Tutorial\mktri.hed
-
+```
 Esto crea el archivo mktri.hed . Este archivo contiene un comando de clonación 'CL' seguido de una serie de comandos 'TI' para 'vincular' HMM para que compartan el mismo conjunto de parámetros. De esta manera, cuando volvemos a estimar estos nuevos parámetros vinculados (con HRest a continuación), los datos de cada uno de los parámetros originales no vinculados se agrupan para que se pueda obtener una mejor estimación. 
 
 Luego crea 3 carpetas más: hmm10-12
 A continuación, ejecute el comando HHEd:
-
+```
 HHEd -A -D -T 1 -H D:\htk\models\hmm9\macros -H D:\htk\models\hmm9\hmmdefs -M D:\htk\models\hmm10 D:\htk\dictionary\Tutorial\mktri.hed D:\htk\dictionary\bin\monophones1
-
+```
 A continuación, ejecuta HEREST 2 veces más:
-
+```
 HERest  -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\wintri.mlf -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm10\macros -H D:\htk\models\hmm10\hmmdefs -M D:\htk\models\hmm11 D:\htk\dictionary\bin\triphones1
 
 HERest  -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\wintri.mlf -t 250.0 150.0 3000.0 -s D:\htk\models\hmm12\stats -S D:\htk\data\train\train.scp -H D:\htk\models\hmm11\macros -H D:\htk\models\hmm11\hmmdefs -M D:\htk\models\hmm12 D:\htk\dictionary\bin\triphones1
 Paso 10 - Haciendo Triphones de Estado Atado
-
+```
 El agrupamiento de árboles de decisión utilizado aquí permite sintetizar triphones nunca vistos. ¿Cómo? mediante el uso de un árbol de decisión fonética donde los modelos se organizan en un árbol y los parámetros que usted pasa se llaman preguntas. El decodificador hace una pregunta sobre el contexto del teléfono y decide qué modelo usar.
 
 Cree un nuevo archivo de script HTK llamado maketriphones.ded que contenga lo siguiente:
-
+```
 AS sp 
 MP sil sil sp 
 TC
-
+```
 Luego ejecute el comando HDMan contra todo el archivo de léxico, no solo el diccionario de entrenamiento que hemos utilizado hasta ahora:
-
+```
 HDMan -A -D -T 1 -b sp -n D:\htk\dictionary\bin\fulllist0 -g D:\htk\dictionary\Tutorial\maketriphones.ded -l flog D:\htk\dict-tri D:\htk\dictionary\lexicon\quechua_lexicon.txt
-
-A continuación, descarga el script Julia fixfulllist.jl a la carpeta '..\htk\scripts' y ejecutarlo para anexar el contenido de monophones0 al principio de que la fulllist0 archivo, y luego a quitar las entradas duplicadas, y poner el resultado en   lista completa :
-
+```
+A continuación, descarga el script Julia fixfulllist.jl a la carpeta '..\htk\scripts' y ejecutarlo para anexar el contenido de monophones0 al principio de que la fulllist0 archivo, y luego a quitar las entradas duplicadas, y poner el resultado en lista completa:
+```
 julia D:\htk\scripts\fixfulllist.jl D:\htk\dictionary\bin\fulllist0 D:\htk\dictionary\bin\monophones0 D:\htk\dictionary\bin\fulllist
-
+```
 A continuación, creará una nueva secuencia de comandos HTK llamada tree.hed (que contiene las preguntas de contexto del teléfono que HTK usará para seleccionar los tonos de llamada relevantes) en su carpeta '..\htk\dictionary\Tutorial' que contiene lo siguiente: tree1.hed (Nota: asegúrese de tener un espacio en blanco línea al final de este archivo). 
 
 A continuación, descargue el script mkclscript.jl a su carpeta '..\htk\dictionary\bin' y ejecútelo de la siguiente manera para agregar los grupos de estado al archivo tree.hed que creó anteriormente:
-
+```
 julia D:\htk\scripts\mkclscript.jl D:\htk\dictionary\bin\monophones0 D:\htk\dictionary\Tutorial\tree.hed
-
+```
 A continuación, crea 3 carpetas más: hmm13-15
 Luego ejecute el comando HHEd (editor de definición hmm):
-
+```
 HHEd -A -D -T 1 -H D:\htk\models\hmm12\macros -H D:\htk\models\hmm12\hmmdefs -M D:\htk\models\hmm13 D:\htk\dictionary\Tutorial\tree.hed D:\htk\dictionary\bin\triphones1
-
+```
 A continuación, ejecuta HEREST 2 veces más: 
-
+```
 HERest -A -D -T 1 -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\wintri.mlf  -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm13\macros -H D:\htk\models\hmm13\hmmdefs -M D:\htk\models\hmm14 D:\htk\tiedlist
 
 HERest -A -D -T 1 -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\wintri.mlf  -t 250.0 150.0 3000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm14\macros -H D:\htk\models\hmm14\hmmdefs -M D:\htk\models\hmm15 D:\htk\tiedlist
-
+```
 ¡El archivo hmmdefs en la carpeta hmm15, junto con el archivo de lista enlazada, ahora se puede usar con Julius para reconocer su discurso!
 
-Corriendo julius en vivo
+#### Corriendo julius en vivo
 
 Primero necesitas crear tu archivo de configuración de Julius. Copie este archivo de configuración de muestra (sample.jconf) en su carpeta '..\htk'. Para obtener detalles sobre los parámetros contenidos en el archivo Sample.jconf, consulte el Juliusbook para obtener más información. 
 
 Asegúrese de que el volumen de su micrófono sea similar al de cuando creó sus archivos de audio. Luego corre Julius con:
-
+```
 C:> julius-4.3.1 -input mic -C Sample.jconf
-
+```
  
 
