@@ -4,14 +4,17 @@
 #### PRÓLOGO IMPORTANTE
 - Una vez adquiridos, los archivos wav deben copiarse en los directorios * data\train\wav *.
 
-Paso 1 - Gramática de la tarea
-Para este tutorial, vaya a la carpeta '..\htk\dictionary' que creó en su directorio de inicio. Crea un nuevo directorio llamado 'Tutorial'. 
+#### Paso 1 - Gramática de la tarea
 
+Para este tutorial, vaya a la carpeta '..\htk\dictionary' que creó en su directorio de inicio. Crea un nuevo directorio llamado 'Tutorial'. 
 
 A continuación, cree un archivo llamado sample.grammar en su nueva carpeta '..\htk\dictionary\Tutorial' y agregue el siguiente texto:
 
-S : NS_B LOOKUP NS_E
-LOOKUP: WORD
+
+|   S : NS_B LOOKUP NS_E               |
+|   LOOKUP: WORD                       |
+
+
 
 Para este tutorial, cree un archivo llamado: sample.voca en su carpeta '..\htk\dictionary\Tutorial' , y agregue el siguiente texto:
 
