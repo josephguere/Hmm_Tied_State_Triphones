@@ -5,7 +5,7 @@
 
 #### Paso 1 - Gramática de la tarea
 
-Para este tutorial, vaya a la carpeta '..\htk\dictionary' que creó en su directorio de inicio. Crea un nuevo directorio llamado 'Tutorial'. 
+Para este tutorial, vaya a la carpeta ***'..\htk\dictionary'*** que creó en su directorio de inicio. Crea un nuevo directorio llamado 'Tutorial'. 
 
 A continuación, cree un archivo llamado sample.grammar en su nueva carpeta ***'..\htk\dictionary\Tutorial'*** y agregue el siguiente texto:
 
@@ -30,13 +30,13 @@ Descargue el script del compilador de gramática mkdfa.jl de Julia a su carpeta 
 ```
      julia D:\htk\scripts\mkdfa.jl D:\htk\dictionary\Tutorial\sample
 ```
-Los archivos sample.dfa y sample.term generados contienen información finita de autómatas , y el   archivo sample.dict contiene información del diccionario de palabras. Todos están en formato julius.
+Los archivos sample.dfa y sample.term generados contienen información finita de autómatas , y el archivo sample.dict contiene información del diccionario de palabras. Todos están en formato julius.
 
 #### Paso 2 – Diccionario de Pronunciación 
 
 Crear un archi prompts.txt en la ruta ***'..\htk\dictionary\Tutorial'*** , que es la lista de palabras que registraremos en el siguiente Paso.
 
-Derive un archivo wlist del archivo prompts.txt a la ruta ***'..\htk\dictionary'***; el archivo wlist es una lista ordenada de las palabras únicas que aparecen en el archivo prompts.txt.
+Derive un archivo wlist del archivo prompts.txt a la ruta ***'..\htk\dictionary'*** ; el archivo wlist es una lista ordenada de las palabras únicas que aparecen en el archivo prompts.txt.
 
 El siguiente paso es agregar información de pronunciación (es decir, los fonemas que componen la palabra) a cada una de las palabras en el archivo wlist, creando así un diccionario de pronunciación.
 
@@ -46,7 +46,7 @@ AS sp
 RS cmu 
 MP sil sil sp
 ```
-Cree un nuevo directorio llamado 'léxico' en su carpeta ***'..\htk\dictionary'***. Cree un nuevo archivo llamado quechua_lexicon en su carpeta '..\ htk\dictionary\lexicon' Ejecute el comando HDMan desde su directorio ***'..\htk\dictionary\Tutorial'*** de la siguiente manera:
+Cree un nuevo directorio llamado 'léxico' en su carpeta ***'..\htk\dictionary'*** . Cree un nuevo archivo llamado quechua_lexicon en su carpeta ***'..\ htk\dictionary\lexicon'*** Ejecute el comando HDMan desde su directorio ***'..\htk\dictionary\Tutorial'*** de la siguiente manera:
 ```
 HDMan -A -D -T 1 -m -w D:\htk\dictionary\lexicon\wlist.txt -n D:\htk\dictionary\bin\monophones1 -i -l dlog D:\htk\dictionary\bin\dict D:\htk\dictionary\lexicon\quechua_lexicon.txt
 ```
@@ -64,7 +64,7 @@ Descargue el script de Julia prompts2mlf.jl a su directorio ***'..\htk\scripts'*
 ```
 julia D:\htk\scripts\prompts2mlf.jl D:\htk\dictionary\Tutorial\prompts.txt D:\htk\data\train\words.mlf
 ```
-A continuación, debe ejecutar el comando HLEd para expandir las transcripciones de nivel de palabra a las transcripciones de nivel de phone, es decir, reemplazar cada palabra con sus fonemas y colocar el resultado en un nuevo archivo de etiqueta maestra de nivel de phone. Primero, cree el script de edición mkphones0.led en su carpeta ***'..\htk\dictionary\Tutorial'***. Luego ejecute el siguiente comando:
+A continuación, debe ejecutar el comando HLEd para expandir las transcripciones de nivel de palabra a las transcripciones de nivel de phone, es decir, reemplazar cada palabra con sus fonemas y colocar el resultado en un nuevo archivo de etiqueta maestra de nivel de phone. Primero, cree el script de edición mkphones0.led en su carpeta ***'..\htk\dictionary\Tutorial'*** . Luego ejecute el siguiente comando:
 ```
 HLEd -A -D -T 1 -l * -d D:\htk\dictionary\bin\dict -i D:\htk\data\train\phones0.mlf D:\htk\dictionary\Tutorial\mkphones0.led D:\htk\data\train\words.mlf
 ```
@@ -80,11 +80,11 @@ HLEd -A -D -T 1 -l * -d D:\htk\dictionary\bin\dict -i D:\htk\data\train\phones1.
 
 Utiliza la herramienta HCopy para convertir sus archivos wav al formato MFCC. Tienes 2 opciones. Puede ejecutar el comando HCopy a mano para cada archivo de audio que creó en el Paso 3, o puede crear un archivo que contenga una lista de cada archivo de audio de origen y el nombre del archivo MFCC al que se convertirá, y usar ese archivo como un parámetro para el comando HCopy. Usaremos el segundo enfoque en este ejemplo. 
 
-Cree el archivo de secuencia de comandos HTK codetrain.scp en su carpeta ***'..\htk\data\train'***.
+Cree el archivo de secuencia de comandos HTK codetrain.scp en su carpeta ***'..\htk\data\train'*** .
 
 El comando HCopy realiza la conversión de formato wav a MFCC. Para hacer esto, se requiere un archivo de configuración (configuración) que especifique todos los parámetros de conversión necesarios. Cree un archivo llamado wav_config en su carpeta ***'..\htk\dictionary\Tutorial'*** .
 
-Cree un nuevo directorio llamado 'mfcc' en su carpeta ***'..\htk\data\train'***. Luego ejecute HCopy desde su carpeta ***'..\htk\dictionary\Tutorial'*** de la siguiente manera:
+Cree un nuevo directorio llamado 'mfcc' en su carpeta ***'..\htk\data\train'*** . Luego ejecute HCopy desde su carpeta ***'..\htk\dictionary\Tutorial'*** de la siguiente manera:
 ```
 HCopy -A -D -T 1 -C D:\htk\dictionary\Tutorial\wav_config -S D:\htk\data\train\codetrain.scp
 ```
@@ -92,9 +92,9 @@ El resultado es la creación de una serie de archivos mfc correspondientes a los
 
 #### Paso 6 - Creando monofones de inicio plano
 
-El primer paso en el entrenamiento del Modelo Oculto de Markov ("HMM") es definir un modelo de prototipo llamado "proto". El enfoque aquí es crear una estructura modelo, los parámetros no son importantes. Cree un archivo llamado proto en su directorio ***'..\ htk\models'***.
+El primer paso en el entrenamiento del Modelo Oculto de Markov ("HMM") es definir un modelo de prototipo llamado "proto". El enfoque aquí es crear una estructura modelo, los parámetros no son importantes. Cree un archivo llamado proto en su directorio ***'..\ htk\models'*** .
  
-También necesita un archivo de configuración. Cree un archivo llamado config en su directorio ***'..\htk\dictionary\Tutorial'***.
+También necesita un archivo de configuración. Cree un archivo llamado config en su directorio ***'..\htk\dictionary\Tutorial'*** .
 
 El siguiente paso es crear una nueva carpeta llamada hmm0. También debe decirle a HTK dónde se encuentran todos los archivos vectoriales de características (esos son los archivos mfcc que creó en el último paso). Haces esto con un archivo de script HTK. Por lo tanto, crea un archivo llamado train.scp .
 
@@ -102,7 +102,7 @@ Luego cree una nueva versión de proto en la carpeta hmm0 - usando la herramient
 ```
 HCompV -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -f 0.01 -m -S D:\htk\data\train\train.scp -M D:\htk\models\hmm0 D:\htk\models\proto
 ```
-Cree un nuevo archivo llamado hmmdefs en su carpeta ***' ..\htk\models\hmm0'***:
+Cree un nuevo archivo llamado hmmdefs en su carpeta ***' ..\htk\models\hmm0'*** :
 *	Copiar el monophones0 archivo a la carpeta hmm0.
 *	Renombra el archivo monophones0 a hmmdefs.
 Para cada teléfono en hmmdefs:
@@ -119,7 +119,7 @@ Debe crear y almacenar un nuevo archivo llamado macros en su carpeta ***'..\htk\
 *	Copiar vFloors a macros.
 *	Copie las primeras 3 líneas de proto (de ~ o a <DIAGC>) y agréguelas al principio del archivo de macros.
 
-Volver a estimarlos utilizando los archivos MFCC listados en el script train.scp y crear un nuevo conjunto de modelos en hmm1. Ejecute el comando HERest desde su directorio ***'..\htk\dictionary\Tutorial'***:
+Volver a estimarlos utilizando los archivos MFCC listados en el script train.scp y crear un nuevo conjunto de modelos en hmm1. Ejecute el comando HERest desde su directorio ***'..\htk\dictionary\Tutorial'*** :
 ```
 HERest -A -D -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train\phones0.mlf -t 250.0 150.0 1000.0 -S D:\htk\data\train\train.scp -H D:\htk\models\hmm0\macros -H D:\htk\models\hmm0\hmmdefs -M D:\htk\models\hmm1 D:\htk\dictionary\bin\monophones0
 
@@ -143,7 +143,7 @@ Primero copie el contenido de la carpeta hmm3 a hmm4. Luego, utilizando un edito
 0.0 0.9 0.1
 0.0 0.0 0.0
 ```
-A continuación, ejecute el editor de HMM llamado HHEd para "vincular" el estado sp al estado central central, ya que significa que uno o más HMM comparten el mismo conjunto de parámetros. Para hacer esto, necesita crear el siguiente script de comando HHEd, llamado sil.hed , en su carpeta ***'..\htk\dictionary\Tutorial'***:
+A continuación, ejecute el editor de HMM llamado HHEd para "vincular" el estado sp al estado central central, ya que significa que uno o más HMM comparten el mismo conjunto de parámetros. Para hacer esto, necesita crear el siguiente script de comando HHEd, llamado sil.hed , en su carpeta ***'..\htk\dictionary\Tutorial'*** :
 
 La última línea es el comando "empate". A continuación, ejecute HHEd de la siguiente manera, pero utilizando el archivo monophones1 que contiene el modelo sp:
 ```
@@ -180,7 +180,7 @@ Primero necesitas crear el script de edición mktri.led. Luego ejecuta el comand
 HLEd -A -D -T 1 -n D:\htk\dictionary\bin\triphones1 -l * -i D:\htk\data\train\wintri.mlf D:\htk\dictionary\Tutorial\mktri.led D:\htk\data\train\aligned.mlf
 ```
 A continuación, descargue el script Julia mktrihed.jl en su '..\htk\scripts', luego cree el archivo mktri.hed ejecutando el siguiente comando dentro de la carpeta 
-'..\ htk\dictionary\bin':
+***'..\ htk\dictionary\bin'*** :
 ```
 julia D:\htk\scripts\mktrihed.jl monophones1 triphones1 D:\htk\dictionary\Tutorial\mktri.hed
 ```
@@ -235,7 +235,7 @@ HERest -A -D -T 1 -T 1 -C D:\htk\dictionary\Tutorial\config -I D:\htk\data\train
 
 #### Corriendo julius en vivo
 
-Primero necesitas crear tu archivo de configuración de Julius. Copie este archivo de configuración de muestra (sample.jconf) en su carpeta ***'..\htk'***. Para obtener detalles sobre los parámetros contenidos en el archivo Sample.jconf, consulte el Juliusbook para obtener más información. 
+Primero necesitas crear tu archivo de configuración de Julius. Copie este archivo de configuración de muestra (sample.jconf) en su carpeta ***'..\htk'*** . Para obtener detalles sobre los parámetros contenidos en el archivo Sample.jconf, consulte el Juliusbook para obtener más información. 
 
 Asegúrese de que el volumen de su micrófono sea similar al de cuando creó sus archivos de audio. Luego corre Julius con:
 ```
